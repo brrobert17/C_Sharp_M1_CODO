@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel;
 using Football_Score_Sim;
 
-Team t1 = new Team("F.C. København", "FCK",0,0,0,0,0,0,0,0);
-Team t2 = new Team("FC Nordsjælland", "FCN",0,0,0,0,0,0,0,0);
-Team t3 = new Team("Lyngby Boldklub", "LBK",0,0,0,0,0,0,0,0);
-Team t4 = new Team("Silkeborg IF", "SIF",0,0,0,0,0,0,0,0);
+Team t1 = new Team("F.C. København", "FCK");
+Team t2 = new Team("FC Nordsjælland", "FCN");
+Team t3 = new Team("Lyngby Boldklub", "LBK");
+Team t4 = new Team("Silkeborg IF", "SIF");
 
 var l1Teams = new List<Team>();
 l1Teams.Add(t1);
@@ -14,7 +14,7 @@ l1Teams.Add(t4);
 
 League l1 = new League("Superliga", l1Teams);
 
-Console.WriteLine(t1.Name);
+/*Console.WriteLine(t1.Name);
 Console.WriteLine(t2.Name);
 using(var reader = new StreamReader("scores.csv"))
 {
@@ -34,5 +34,37 @@ using(var reader = new StreamReader("scores.csv"))
         Console.WriteLine(values[0]+ " - " + values[1] + " " + values[2] + ":" + values[3]);
         
     }
-}
-Console.WriteLine(t1.Name + t1.Matches);
+}*/
+// Console.WriteLine(t1.Name + t1.Matches);
+
+l1.AddMatch("FCK", "FCN", 11, 8);
+
+Console.WriteLine(l1.Teams[2].Name);
+Console.WriteLine(l1.Teams[2].Points);
+Console.WriteLine(l1.Teams[2].GoalsFor);
+Console.WriteLine(l1.Teams[2].GoalsAgainst);
+Console.WriteLine(l1.Teams[2].GoalDifference);
+Console.WriteLine(l1.Teams[2].Matches);
+Console.WriteLine("-------");
+Console.WriteLine(l1.Teams[3].Name);
+Console.WriteLine(l1.Teams[3].Points);
+Console.WriteLine(l1.Teams[3].GoalsFor);
+Console.WriteLine(l1.Teams[3].GoalsAgainst);
+Console.WriteLine(l1.Teams[3].GoalDifference);
+Console.WriteLine(l1.Teams[3].Matches);
+
+l1.AddMatch("FCK", "FCN", 10, 10);
+
+Console.WriteLine(l1.Teams[2].Name);
+Console.WriteLine(l1.Teams[2].Points);
+Console.WriteLine(l1.Teams[2].GoalsFor);
+Console.WriteLine(l1.Teams[2].GoalsAgainst);
+Console.WriteLine(l1.Teams[2].GoalDifference);
+Console.WriteLine(l1.Teams[2].Matches);
+Console.WriteLine("-------");
+Console.WriteLine(l1.Teams[3].Name);
+Console.WriteLine(l1.Teams[3].Points);
+Console.WriteLine(l1.Teams[3].GoalsFor);
+Console.WriteLine(l1.Teams[3].GoalsAgainst);
+Console.WriteLine(l1.Teams[3].GoalDifference);
+Console.WriteLine(l1.Teams[3].Matches);
