@@ -64,7 +64,7 @@ public class Team
         private set
         {
             won = value;
-            calculatePoints();
+            CalculatePoints();
         }
     }
 
@@ -74,7 +74,7 @@ public class Team
         private set
         {
             drawn = value;
-            calculatePoints();  
+            CalculatePoints();  
         } 
     }
 
@@ -90,7 +90,7 @@ public class Team
         private set
         {
             goalsFor = value;
-            calculateGoalDiff();
+            CalculateGoalDiff();
         }
     }
 
@@ -100,7 +100,7 @@ public class Team
         private set
         {
             goalsAgainst = value;
-            calculateGoalDiff();
+            CalculateGoalDiff();
         }
     }
 
@@ -116,34 +116,34 @@ public class Team
         this.Abbr = abbr;
     }
 
-    public void addMatch(MatchResult result, int goalsFor, int goalsAgainst, ref Team otherTeam)
+    public void AddMatch(ref Team otherTeam, int goalsFor, int goalsAgainst)
     {
         
         this.Matches += 1;
         otherTeam.Matches += 1;
         
-        switch (result)
+
+        if (goalsFor > goalsAgainst)
         {
-            case MatchResult.WIN:
-                this.Won += 1;
-                otherTeam.Lost += 1;
-                break;
-            case MatchResult.DRAW:
-                this.Drawn += 1;
-                otherTeam.Drawn += 1;
-                break;
-            case MatchResult.LOSS:
-                this.Lost += 1;
-                otherTeam.Won += 1;
-                break;
-        }
-        
-        addGoals(goalsFor, goalsAgainst);
-        otherTeam.addGoals(goalsAgainst, goalsFor);       
+            this.Won += 1;        
+            otherTeam.Lost += 1;   
+        } else if (goalsFor < goalsAgainst)
+        {
+            this.Lost += 1;     
+            otherTeam.Won += 1;  
+        } else if (goalsFor == goalsAgainst)
+        {
+            this.Drawn += 1;       
+            otherTeam.Drawn += 1;      
+        } 
+
+        AddGoals(goalsFor, goalsAgainst);
+        otherTeam.AddGoals(goalsAgainst, goalsFor);       
         
     }
+    
 
-    private void calculatePoints()
+    private void CalculatePoints()
     {
         int pointsForWins = ((int)MatchResult.WIN) * this.won;
         int pointsForDrawn = ((int)MatchResult.DRAW) * this.drawn;
@@ -151,12 +151,12 @@ public class Team
         this.Points = pointsForDrawn + pointsForWins;
     }
 
-    private void calculateGoalDiff()
+    private void CalculateGoalDiff()
     {
-        this.GoalDifference = Math.Abs(goalsAgainst - goalsFor);
+        this.GoalDifference = goalsFor - goalsAgainst;
     }
 
-    private void addGoals(int goalsFor, int goalsAgainst)
+    private void AddGoals(int goalsFor, int goalsAgainst)
     {
         this.GoalsFor += goalsFor;          
         this.GoalsAgainst += goalsAgainst;  
