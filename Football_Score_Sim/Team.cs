@@ -38,13 +38,13 @@ public class Team
         set => name = value ?? throw new ArgumentNullException(nameof(value));
     }
 
-    private string Abbr
+    public string Abbr
     {
         get => abbr;
         set => abbr = value ?? throw new ArgumentNullException(nameof(value));
     }
 
-    private int Matches
+    public int Matches
     {
         get => matches;
         set => matches = value;
