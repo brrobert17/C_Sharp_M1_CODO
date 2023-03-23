@@ -138,11 +138,8 @@ public class Team
                 break;
         }
         
-        this.GoalsFor += goalsFor;
-        this.GoalsAgainst += goalsAgainst;
-        
-        otherTeam.GoalsAgainst += goalsFor;        
-        otherTeam.GoalsFor += goalsAgainst;
+        addGoals(goalsFor, goalsAgainst);
+        otherTeam.addGoals(goalsAgainst, goalsFor);       
         
     }
 
@@ -157,5 +154,11 @@ public class Team
     private void calculateGoalDiff()
     {
         this.GoalDifference = Math.Abs(goalsAgainst - goalsFor);
+    }
+
+    private void addGoals(int goalsFor, int goalsAgainst)
+    {
+        this.GoalsFor += goalsFor;          
+        this.GoalsAgainst += goalsAgainst;  
     }
 }
