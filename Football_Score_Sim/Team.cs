@@ -26,9 +26,11 @@ public class Team
         this.goalsAgainst = goalsAgainst;
         this.goalDifference = goalDifference;
     }
-
-    public Team()
+    
+    public Team(string name, string abbr)
     {
+        this.name = name;
+        this.abbr = abbr;
     }
 
 
@@ -38,57 +40,125 @@ public class Team
         set => name = value ?? throw new ArgumentNullException(nameof(value));
     }
 
-    private string Abbr
+    public string Abbr
     {
         get => abbr;
         set => abbr = value ?? throw new ArgumentNullException(nameof(value));
     }
 
-    private int Matches
+    public int Matches
     {
         get => matches;
-        set => matches = value;
+        private set => matches = value;
     }
 
-    private int Points
+    public int Points
     {
         get => points;
-        set => points = value;
+        private set => points = value;
     }
 
-    private int Won
+    public int Won
     {
         get => won;
-        set => won = value;
+        private set
+        {
+            won = value;
+            CalculatePoints();
+        }
     }
 
-    private int Drawn
+    public int Drawn
     {
         get => drawn;
-        set => drawn = value;
+        private set
+        {
+            drawn = value;
+            CalculatePoints();  
+        } 
     }
 
-    private int Lost
+    public int Lost
     {
         get => lost;
-        set => lost = value;
+        private set => lost = value;
     }
 
-    private int GoalsFor
+    public int GoalsFor
     {
         get => goalsFor;
-        set => goalsFor = value;
+        private set
+        {
+            goalsFor = value;
+            CalculateGoalDiff();
+        }
     }
 
-    private int GoalsAgainst
+    public int GoalsAgainst
     {
         get => goalsAgainst;
-        set => goalsAgainst = value;
+        private set
+        {
+            goalsAgainst = value;
+            CalculateGoalDiff();
+        }
     }
 
-    private int GoalDifference
+    public int GoalDifference
     {
         get => goalDifference;
-        set => goalDifference = value;
+        private set => goalDifference = value;
+    }
+
+    public void setNames(string fullName, string abbreviation)
+    {
+        this.Name = fullName;
+        this.Abbr = abbr;
+    }
+
+    public void AddMatch(ref Team otherTeam, int goalsFor, int goalsAgainst)
+    {
+        
+        this.Matches += 1;
+        otherTeam.Matches += 1;
+        
+
+        if (goalsFor > goalsAgainst)
+        {
+            this.Won += 1;        
+            otherTeam.Lost += 1;   
+        } else if (goalsFor < goalsAgainst)
+        {
+            this.Lost += 1;     
+            otherTeam.Won += 1;  
+        } else if (goalsFor == goalsAgainst)
+        {
+            this.Drawn += 1;       
+            otherTeam.Drawn += 1;      
+        } 
+
+        AddGoals(goalsFor, goalsAgainst);
+        otherTeam.AddGoals(goalsAgainst, goalsFor);       
+        
+    }
+    
+
+    private void CalculatePoints()
+    {
+        int pointsForWins = ((int)MatchResult.WIN) * this.won;
+        int pointsForDrawn = ((int)MatchResult.DRAW) * this.drawn;
+
+        this.Points = pointsForDrawn + pointsForWins;
+    }
+
+    private void CalculateGoalDiff()
+    {
+        this.GoalDifference = goalsFor - goalsAgainst;
+    }
+
+    private void AddGoals(int goalsFor, int goalsAgainst)
+    {
+        this.GoalsFor += goalsFor;          
+        this.GoalsAgainst += goalsAgainst;  
     }
 }
