@@ -24,10 +24,10 @@ using(var reader = new StreamReader("scores.csv"))
         var values = line.Split(',');
         foreach (var team in l1.Teams)
         {
-            if (team.Abbr.Equals(values[0]))
-            {
-                team.Matches = team.Matches + 1;
-            }
+            // if (team.Abbr.Equals(values[0]))
+            // {
+            //     team.Matches = team.Matches + 1;
+            // }
 
         }
 
