@@ -27,6 +27,10 @@ public class Team
         this.goalDifference = goalDifference;
     }
 
+    public Team()
+    {
+    }
+
 
     public string Name
     {
