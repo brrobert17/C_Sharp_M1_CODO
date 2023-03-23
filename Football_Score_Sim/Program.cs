@@ -37,6 +37,8 @@ using(var reader = new StreamReader("scores.csv"))
 }*/
 // Console.WriteLine(t1.Name + t1.Matches);
 
+var lines = "-------";
+
 l1.AddMatch("FCK", "FCN", 11, 8);
 
 Console.WriteLine(l1.Teams[2].Name);
@@ -45,7 +47,7 @@ Console.WriteLine(l1.Teams[2].GoalsFor);
 Console.WriteLine(l1.Teams[2].GoalsAgainst);
 Console.WriteLine(l1.Teams[2].GoalDifference);
 Console.WriteLine(l1.Teams[2].Matches);
-Console.WriteLine("-------");
+Console.WriteLine(lines);
 Console.WriteLine(l1.Teams[3].Name);
 Console.WriteLine(l1.Teams[3].Points);
 Console.WriteLine(l1.Teams[3].GoalsFor);
@@ -61,7 +63,7 @@ Console.WriteLine(l1.Teams[2].GoalsFor);
 Console.WriteLine(l1.Teams[2].GoalsAgainst);
 Console.WriteLine(l1.Teams[2].GoalDifference);
 Console.WriteLine(l1.Teams[2].Matches);
-Console.WriteLine("-------");
+Console.WriteLine(lines);
 Console.WriteLine(l1.Teams[3].Name);
 Console.WriteLine(l1.Teams[3].Points);
 Console.WriteLine(l1.Teams[3].GoalsFor);
