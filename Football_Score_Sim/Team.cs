@@ -32,8 +32,7 @@ public class Team
         this.name = name;
         this.abbr = abbr;
     }
-
-
+    
     public string Name
     {
         get => name;

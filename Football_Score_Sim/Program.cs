@@ -57,7 +57,7 @@ Console.WriteLine(l1.Teams[3].GoalsFor);
 Console.WriteLine(l1.Teams[3].GoalsAgainst);
 Console.WriteLine(l1.Teams[3].GoalDifference);
 Console.WriteLine(l1.Teams[3].Matches);
-Table.ShowTable(teams:l1.Teams);
+Table.PrintTable();
 
 // l1.AddMatch("FCK", "FCN", 10, 10);
 //
