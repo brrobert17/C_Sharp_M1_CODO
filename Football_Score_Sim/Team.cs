@@ -2,6 +2,7 @@
 
 public class Team
 {
+    private int position;
     private string name;
     private string abbr;
     private int matches;
@@ -34,6 +35,12 @@ public class Team
     }
 
 
+    public int Position
+    {
+        get => position;
+        set => position = value;
+    }
+    
     public string Name
     {
         get => name;

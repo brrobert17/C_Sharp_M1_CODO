@@ -30,7 +30,7 @@ l1Teams.Add(t12);
 
 League l1 = new League("Superliga", l1Teams);
 
-using(var reader = new StreamReader("scores/s2022-2023/r1.csv"))
+/*using(var reader = new StreamReader("scores/s2022-2023/r1.csv"))
 {
     while (!reader.EndOfStream)
     {
@@ -38,38 +38,32 @@ using(var reader = new StreamReader("scores/s2022-2023/r1.csv"))
         var values = line.Split(',');
         l1.AddMatch(values[0], values[1], Convert.ToByte(values[2]), Convert.ToByte(values[3]));
     }
-}
+}*/
 
-var lines = "-------";
 
-//l1.AddMatch("FCK", "FCN", 11, 8);
 
-Console.WriteLine(l1.Teams[2].Name);
-Console.WriteLine(l1.Teams[2].Points);
-Console.WriteLine(l1.Teams[2].GoalsFor);
-Console.WriteLine(l1.Teams[2].GoalsAgainst);
-Console.WriteLine(l1.Teams[2].GoalDifference);
-Console.WriteLine(l1.Teams[2].Matches);
-Console.WriteLine(lines);
-Console.WriteLine(l1.Teams[3].Name);
-Console.WriteLine(l1.Teams[3].Points);
-Console.WriteLine(l1.Teams[3].GoalsFor);
-Console.WriteLine(l1.Teams[3].GoalsAgainst);
-Console.WriteLine(l1.Teams[3].GoalDifference);
-Console.WriteLine(l1.Teams[3].Matches);
+/*var lines = "-------";
 
-// l1.AddMatch("FCK", "FCN", 10, 10);
-//
-// Console.WriteLine(l1.Teams[2].Name);
-// Console.WriteLine(l1.Teams[2].Points);
-// Console.WriteLine(l1.Teams[2].GoalsFor);
-// Console.WriteLine(l1.Teams[2].GoalsAgainst);
-// Console.WriteLine(l1.Teams[2].GoalDifference);
-// Console.WriteLine(l1.Teams[2].Matches);
-// Console.WriteLine(lines);
-// Console.WriteLine(l1.Teams[3].Name);
-// Console.WriteLine(l1.Teams[3].Points);
-// Console.WriteLine(l1.Teams[3].GoalsFor);
-// Console.WriteLine(l1.Teams[3].GoalsAgainst);
-// Console.WriteLine(l1.Teams[3].GoalDifference);
-// Console.WriteLine(l1.Teams[3].Matches);
+l1.AddMatch("FCK", "FCN", 11, 8);
+l1.AddMatch("FCK", "FCN", 10, 10);
+l1.AddMatch("AAB", "ACH", 5, 10);
+l1.AddMatch("BIF", "RFC", 6, 3);
+
+
+printOutResults();
+
+void printOutResults()
+{
+    foreach (var team in l1.Teams)
+    {
+        Console.WriteLine(team.Position);
+        Console.WriteLine(team.Name);
+        Console.WriteLine(team.Points);
+        Console.WriteLine(team.GoalDifference);
+        Console.WriteLine(team.GoalsFor);
+        Console.WriteLine(team.GoalsAgainst);
+        Console.WriteLine(team.Matches);
+        Console.WriteLine(lines);
+    }
+}*/
+

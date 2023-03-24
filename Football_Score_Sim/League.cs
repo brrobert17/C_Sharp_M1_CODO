@@ -43,7 +43,8 @@ public class League
         newTeams.Add(t1);
         newTeams.Add(t2);
 
-        this.Teams = newTeams;
+        this.Teams = newTeams; 
+        CalculateTeamsPos();
 
     }
 
@@ -63,6 +64,27 @@ public class League
         return findResult[0];
         
         
+    }
+
+    public void CalculateTeamsPos()
+    {
+        var newTeams = Teams;
+
+        newTeams = newTeams.OrderByDescending(x => x.Points)
+            .ThenByDescending(x => x.GoalDifference)
+            .ThenByDescending(x => x.GoalsFor)
+            .ThenBy(x => x.GoalsAgainst)
+            .ThenBy(x => x.Name)
+            .ToList();
+
+        int position = 1;
+        foreach (var team in newTeams)
+        {
+            team.Position = position++;
+        }
+
+        this.Teams = newTeams;
+
     }
     
     
