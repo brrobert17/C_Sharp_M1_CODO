@@ -20,24 +20,38 @@ public static class Table
         Team t10 = new Team("OB", "OB");
         Team t11 = new Team("AC Horsens", "ACH");
         Team t12 = new Team("AaB", "AAB");
+        var l1Teams = new List<Team>();
+        l1Teams.Add(t1);
+        l1Teams.Add(t2);
+        l1Teams.Add(t3);
+        l1Teams.Add(t4);
+        l1Teams.Add(t5);
+        l1Teams.Add(t6);
+        l1Teams.Add(t7);
+        l1Teams.Add(t8);
+        l1Teams.Add(t9);
+        l1Teams.Add(t10);
+        l1Teams.Add(t11);
+        l1Teams.Add(t12);
         
         IEnumerable<Tuple<int, string, string>> authors =
             new[]
             {
                 //read teams from table
 
-                Tuple.Create(1, t1.Name, t1.Abbr),
-                Tuple.Create(2, t2.Name, t2.Abbr),
-                Tuple.Create(3, t3.Name, t3.Abbr),
-                Tuple.Create(4, t4.Name, t4.Abbr),
-                Tuple.Create(5, t5.Name, t5.Abbr),
-                Tuple.Create(6, t6.Name, t6.Abbr),
-                Tuple.Create(7, t7.Name, t7.Abbr),
-                Tuple.Create(8, t8.Name, t8.Abbr),
-                Tuple.Create(9, t9.Name, t9.Abbr),
-                Tuple.Create(10, t10.Name, t10.Abbr),
-                Tuple.Create(11, t11.Name, t11.Abbr),
-                Tuple.Create(12, t12.Name, t12.Abbr),
+                Tuple.Create(1, l1Teams[0].Name, l1Teams[0].Abbr),
+                Tuple.Create(2, l1Teams[1].Name, l1Teams[1].Abbr),
+                Tuple.Create(3, l1Teams[2].Name, l1Teams[2].Abbr),
+                Tuple.Create(4, l1Teams[3].Name, l1Teams[3].Abbr),
+                Tuple.Create(5, l1Teams[4].Name, l1Teams[4].Abbr),
+                Tuple.Create(6, l1Teams[5].Name, l1Teams[5].Abbr),
+                Tuple.Create(7, l1Teams[6].Name, l1Teams[6].Abbr),
+                Tuple.Create(8, l1Teams[7].Name, l1Teams[7].Abbr),
+                Tuple.Create(9, l1Teams[8].Name, l1Teams[8].Abbr),
+                Tuple.Create(10, l1Teams[9].Name, l1Teams[9].Abbr),
+                Tuple.Create(11, l1Teams[10].Name, l1Teams[10].Abbr),
+                Tuple.Create(12, l1Teams[11].Name, l1Teams[11].Abbr),
+                
             };
 
         Console.WriteLine(authors.ToStringTable(
