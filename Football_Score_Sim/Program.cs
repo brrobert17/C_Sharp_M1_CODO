@@ -30,7 +30,7 @@ l1Teams.Add(t12);
 
 League l1 = new League("Superliga", l1Teams);
 
-using(var reader = new StreamReader("scores/s2022-2023/r1.csv"))
+using(var reader = new StreamReader(@"C:\Users\sfatt\OneDrive\Desktop\java class homework\semister4\c#\Firstcsharp\C_Sharp_M1_CODO\Football_Score_Sim\scores\s2022-2023\r1.csv"))
 {
     while (!reader.EndOfStream)
     {
@@ -57,6 +57,7 @@ Console.WriteLine(l1.Teams[3].GoalsFor);
 Console.WriteLine(l1.Teams[3].GoalsAgainst);
 Console.WriteLine(l1.Teams[3].GoalDifference);
 Console.WriteLine(l1.Teams[3].Matches);
+Table.ShowTable(teams:l1.Teams);
 
 // l1.AddMatch("FCK", "FCN", 10, 10);
 //
