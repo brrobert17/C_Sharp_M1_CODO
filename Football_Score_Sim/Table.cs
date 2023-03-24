@@ -57,6 +57,34 @@ public static class Table
         Console.WriteLine(authors.ToStringTable(
             new[] { "Id", "name", "abbr" },
             a => a.Item1, a => a.Item2, a => a.Item3));
+        
+        
+        //desplay by alphabetical order ask user for input
+        Console.WriteLine("Sort by alphabetical order? (y/n)");
+        var input = Console.ReadLine();
+        if (input == "y")
+        {
+            Console.WriteLine(authors.OrderBy(a => a.Item2).ToStringTable(
+                new[] { "Id", "name", "abbr" },
+                a => a.Item1, a => a.Item2, a => a.Item3));
+        }
+        else
+        {
+            Console.WriteLine(authors.ToStringTable(
+                new[] { "Id", "name", "abbr" },
+                a => a.Item1, a => a.Item2, a => a.Item3));
+        }
+       
+        
+        
+                
+
+
+
+
+
+
+
 
 
 
