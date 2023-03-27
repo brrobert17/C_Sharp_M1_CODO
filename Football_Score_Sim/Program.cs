@@ -30,47 +30,53 @@ l1Teams.Add(t12);
 
 League l1 = new League("Superliga", l1Teams);
 
-using(var reader = new StreamReader(@"C:\Users\sfatt\OneDrive\Desktop\java class homework\semister4\c#\Firstcsharp\C_Sharp_M1_CODO\Football_Score_Sim\scores\s2022-2023\r1.csv"))
-{
-    while (!reader.EndOfStream)
-    {
-        var line = reader.ReadLine();
-        var values = line.Split(',');
-        l1.AddMatch(values[0], values[1], Convert.ToByte(values[2]), Convert.ToByte(values[3]));
-    }
-}
+// using(var reader = new StreamReader("scores/s2022-2023/r1.csv"))
+// {
+//     while (!reader.EndOfStream)
+//     {
+//         var line = reader.ReadLine();
+//         var values = line.Split(',');
+//         l1.AddMatch(values[0], values[1], Convert.ToByte(values[2]), Convert.ToByte(values[3]));
+//     }
+// }
 
-/*var lines = "-------";*/
 
-//l1.AddMatch("FCK", "FCN", 11, 8);
 
- /*Console.WriteLine(l1.Teams[0].Lost);*/
-// Console.WriteLine(l1.Teams[2].Points);
-// Console.WriteLine(l1.Teams[2].GoalsFor);
-// Console.WriteLine(l1.Teams[2].GoalsAgainst);
-// Console.WriteLine(l1.Teams[2].GoalDifference);
-// Console.WriteLine(l1.Teams[2].Matches);
-// Console.WriteLine(lines);
-// Console.WriteLine(l1.Teams[3].Name);
-// Console.WriteLine(l1.Teams[3].Points);
-// Console.WriteLine(l1.Teams[3].GoalsFor);
-// Console.WriteLine(l1.Teams[3].GoalsAgainst);
-// Console.WriteLine(l1.Teams[3].GoalDifference);
-// Console.WriteLine(l1.Teams[3].Matches);
- TableDK.PrintTable(l1);
+var lines = "-------";
 
-// l1.AddMatch("FCK", "FCN", 10, 10);
+l1.AddMatch("FCK", "FCN", 1, 1);
+l1.AddMatch("AAB", "ACH", 1, 1);
+l1.AddMatch("BIF", "RFC", 6, 3);
+l1.AddMatch("FCM", "LBK", 0,4);
+l1.AddMatch("OB", "VFF", 3,1);
+l1.AddMatch("SIF", "AGF", 2,5);
+
+l1.AddMatch("FCK", "FCN", 4, 2);
+l1.AddMatch("AAB", "ACH", 3, 3);
+l1.AddMatch("BIF", "RFC", 5, 2);
+l1.AddMatch("FCM", "LBK", 3,1);
+l1.AddMatch("OB", "VFF", 3,3);
+l1.AddMatch("SIF", "AGF", 0,0);
+
+// printOutResults();
 //
-// Console.WriteLine(l1.Teams[2].Name);
-// Console.WriteLine(l1.Teams[2].Points);
-// Console.WriteLine(l1.Teams[2].GoalsFor);
-// Console.WriteLine(l1.Teams[2].GoalsAgainst);
-// Console.WriteLine(l1.Teams[2].GoalDifference);
-// Console.WriteLine(l1.Teams[2].Matches);
-// Console.WriteLine(lines);
-// Console.WriteLine(l1.Teams[3].Name);
-// Console.WriteLine(l1.Teams[3].Points);
-// Console.WriteLine(l1.Teams[3].GoalsFor);
-// Console.WriteLine(l1.Teams[3].GoalsAgainst);
-// Console.WriteLine(l1.Teams[3].GoalDifference);
-// Console.WriteLine(l1.Teams[3].Matches);
+//
+// void printOutResults()
+// {
+//     foreach (var team in l1.Teams)
+//     {
+//         Console.WriteLine(team.Position);
+//         Console.WriteLine(team.Name);
+//         Console.WriteLine(team.Points);
+//         Console.WriteLine(team.GoalDifference);
+//         Console.WriteLine(team.GoalsFor);
+//         Console.WriteLine(team.GoalsAgainst);
+//         Console.WriteLine(team.Matches);
+//         Console.WriteLine(team.Streak);
+//         Console.WriteLine(lines);
+//     }
+//
+//     
+// }
+
+
