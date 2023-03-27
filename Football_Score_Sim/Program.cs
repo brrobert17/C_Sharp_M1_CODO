@@ -42,12 +42,21 @@ League l1 = new League("Superliga", l1Teams);
 
 
 
-/*var lines = "-------";
+var lines = "-------";
 
-l1.AddMatch("FCK", "FCN", 11, 8);
-l1.AddMatch("FCK", "FCN", 10, 10);
-l1.AddMatch("AAB", "ACH", 5, 10);
+l1.AddMatch("FCK", "FCN", 1, 1);
+l1.AddMatch("AAB", "ACH", 1, 1);
 l1.AddMatch("BIF", "RFC", 6, 3);
+l1.AddMatch("FCM", "LBK", 0,4);
+l1.AddMatch("OB", "VFF", 3,1);
+l1.AddMatch("SIF", "AGF", 2,5);
+
+l1.AddMatch("FCK", "FCN", 4, 2);
+l1.AddMatch("AAB", "ACH", 3, 3);
+l1.AddMatch("BIF", "RFC", 5, 2);
+l1.AddMatch("FCM", "LBK", 3,1);
+l1.AddMatch("OB", "VFF", 3,3);
+l1.AddMatch("SIF", "AGF", 0,0);
 
 
 printOutResults();
@@ -63,7 +72,8 @@ void printOutResults()
         Console.WriteLine(team.GoalsFor);
         Console.WriteLine(team.GoalsAgainst);
         Console.WriteLine(team.Matches);
+        Console.WriteLine(team.Streak);
         Console.WriteLine(lines);
     }
-}*/
+}
 
