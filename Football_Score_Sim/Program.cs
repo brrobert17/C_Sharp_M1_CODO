@@ -40,24 +40,24 @@ using(var reader = new StreamReader(@"C:\Users\sfatt\OneDrive\Desktop\java class
     }
 }
 
-var lines = "-------";
+/*var lines = "-------";*/
 
 //l1.AddMatch("FCK", "FCN", 11, 8);
 
-Console.WriteLine(l1.Teams[2].Name);
-Console.WriteLine(l1.Teams[2].Points);
-Console.WriteLine(l1.Teams[2].GoalsFor);
-Console.WriteLine(l1.Teams[2].GoalsAgainst);
-Console.WriteLine(l1.Teams[2].GoalDifference);
-Console.WriteLine(l1.Teams[2].Matches);
-Console.WriteLine(lines);
-Console.WriteLine(l1.Teams[3].Name);
-Console.WriteLine(l1.Teams[3].Points);
-Console.WriteLine(l1.Teams[3].GoalsFor);
-Console.WriteLine(l1.Teams[3].GoalsAgainst);
-Console.WriteLine(l1.Teams[3].GoalDifference);
-Console.WriteLine(l1.Teams[3].Matches);
-TableDK.PrintTable();
+ //Console.WriteLine(l1.Teams[2].Name);
+// Console.WriteLine(l1.Teams[2].Points);
+// Console.WriteLine(l1.Teams[2].GoalsFor);
+// Console.WriteLine(l1.Teams[2].GoalsAgainst);
+// Console.WriteLine(l1.Teams[2].GoalDifference);
+// Console.WriteLine(l1.Teams[2].Matches);
+// Console.WriteLine(lines);
+// Console.WriteLine(l1.Teams[3].Name);
+// Console.WriteLine(l1.Teams[3].Points);
+// Console.WriteLine(l1.Teams[3].GoalsFor);
+// Console.WriteLine(l1.Teams[3].GoalsAgainst);
+// Console.WriteLine(l1.Teams[3].GoalDifference);
+// Console.WriteLine(l1.Teams[3].Matches);
+ TableDK.PrintTable(l1);
 
 // l1.AddMatch("FCK", "FCN", 10, 10);
 //
