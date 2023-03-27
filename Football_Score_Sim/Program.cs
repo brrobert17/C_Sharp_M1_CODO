@@ -59,7 +59,7 @@ l1.AddMatch("OB", "VFF", 3,3);
 l1.AddMatch("SIF", "AGF", 0,0);
 
 
-printOutResults();
+
 
 void printOutResults()
 {
@@ -75,5 +75,7 @@ void printOutResults()
         Console.WriteLine(team.Streak);
         Console.WriteLine(lines);
     }
+
+    
 }
 
