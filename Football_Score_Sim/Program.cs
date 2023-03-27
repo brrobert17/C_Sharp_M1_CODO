@@ -44,7 +44,7 @@ using(var reader = new StreamReader(@"C:\Users\sfatt\OneDrive\Desktop\java class
 
 //l1.AddMatch("FCK", "FCN", 11, 8);
 
- //Console.WriteLine(l1.Teams[2].Name);
+ /*Console.WriteLine(l1.Teams[0].Lost);*/
 // Console.WriteLine(l1.Teams[2].Points);
 // Console.WriteLine(l1.Teams[2].GoalsFor);
 // Console.WriteLine(l1.Teams[2].GoalsAgainst);
