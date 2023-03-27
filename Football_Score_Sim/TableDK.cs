@@ -4,7 +4,7 @@ namespace Football_Score_Sim;
 
 
 
-public static class Table
+public static class TableDK
 {
     public static void PrintTable()
     {
@@ -34,6 +34,7 @@ public static class Table
         l1Teams.Add(t11);
         l1Teams.Add(t12);
         League l1 = new League("Superliga", l1Teams);
+        
         
         IEnumerable<Tuple<int, string, string>> tableLG =
             new[]

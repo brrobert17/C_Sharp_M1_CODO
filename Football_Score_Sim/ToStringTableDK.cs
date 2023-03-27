@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using System.Text;
 
-public static class TableParser
+public static class TableParserDK
 {
   public static string ToStringTable<T>(
     this IEnumerable<T> values,

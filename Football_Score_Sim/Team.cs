@@ -2,6 +2,7 @@
 
 public class Team
 {
+    private int position;
     private string name;
     private string abbr;
     private int matches;
@@ -12,8 +13,10 @@ public class Team
     private int goalsFor;
     private int goalsAgainst;
     private int goalDifference;
+    private string streak;
 
-    public Team(string name, string abbr, int matches, int points, int won, int drawn, int lost, int goalsFor, int goalsAgainst, int goalDifference)
+    public Team(string name, string abbr, int matches, int points, int won, int drawn, int lost, int goalsFor,
+        int goalsAgainst, int goalDifference, string streak)
     {
         this.name = name;
         this.abbr = abbr;
@@ -25,14 +28,31 @@ public class Team
         this.goalsFor = goalsFor;
         this.goalsAgainst = goalsAgainst;
         this.goalDifference = goalDifference;
+        this.streak = streak;
     }
-    
+
     public Team(string name, string abbr)
     {
         this.name = name;
         this.abbr = abbr;
+        this.matches = 0;
+        this.points = 0;
+        this.won = 0;
+        this.drawn = 0;
+        this.lost = 0;
+        this.goalsFor = 0;
+        this.goalsAgainst = 0;
+        this.goalDifference = 0;
+        this.streak = "-----";
     }
-    
+
+
+    public int Position
+    {
+        get => position;
+        set => position = value;
+    }
+
     public string Name
     {
         get => name;
@@ -73,8 +93,8 @@ public class Team
         private set
         {
             drawn = value;
-            CalculatePoints();  
-        } 
+            CalculatePoints();
+        }
     }
 
     public int Lost
@@ -109,6 +129,12 @@ public class Team
         private set => goalDifference = value;
     }
 
+    public string Streak
+    {
+        get => streak;
+        private set => streak = value;
+    }
+
     public void setNames(string fullName, string abbreviation)
     {
         this.Name = fullName;
@@ -117,30 +143,37 @@ public class Team
 
     public void AddMatch(ref Team otherTeam, int goalsFor, int goalsAgainst)
     {
-        
         this.Matches += 1;
         otherTeam.Matches += 1;
-        
 
+        this.Streak = this.Streak.Substring(0, this.Streak.Length - 1);
+        otherTeam.Streak = otherTeam.Streak.Substring(0, otherTeam.Streak.Length - 1);
         if (goalsFor > goalsAgainst)
         {
-            this.Won += 1;        
-            otherTeam.Lost += 1;   
-        } else if (goalsFor < goalsAgainst)
+            this.Won += 1;
+            otherTeam.Lost += 1;
+            this.Streak = this.Streak.PadLeft(5, 'W');
+            otherTeam.Streak = otherTeam.Streak.PadLeft(5, 'L');
+        }
+        else if (goalsFor < goalsAgainst)
         {
-            this.Lost += 1;     
-            otherTeam.Won += 1;  
-        } else if (goalsFor == goalsAgainst)
+            this.Lost += 1;
+            otherTeam.Won += 1;
+            this.Streak = this.Streak.PadLeft(5, 'L');
+            otherTeam.Streak = otherTeam.Streak.PadLeft(5, 'W');
+        }
+        else if (goalsFor == goalsAgainst)
         {
-            this.Drawn += 1;       
-            otherTeam.Drawn += 1;      
-        } 
+            this.Drawn += 1;
+            otherTeam.Drawn += 1;
+            this.Streak = this.Streak.PadLeft(5, 'D');
+            otherTeam.Streak = otherTeam.Streak.PadLeft(5, 'D');
+        }
 
         AddGoals(goalsFor, goalsAgainst);
-        otherTeam.AddGoals(goalsAgainst, goalsFor);       
-        
+        otherTeam.AddGoals(goalsAgainst, goalsFor);
     }
-    
+
 
     private void CalculatePoints()
     {
@@ -157,7 +190,7 @@ public class Team
 
     private void AddGoals(int goalsFor, int goalsAgainst)
     {
-        this.GoalsFor += goalsFor;          
-        this.GoalsAgainst += goalsAgainst;  
+        this.GoalsFor += goalsFor;
+        this.GoalsAgainst += goalsAgainst;
     }
 }

@@ -37,14 +37,14 @@ public class League
 
         newTeams.Remove(t1);
         newTeams.Remove(t2);
-        
+
         t1.AddMatch(ref t2, t1Goals, t2Goals);
-        
+
         newTeams.Add(t1);
         newTeams.Add(t2);
 
         this.Teams = newTeams;
-
+        CalculateTeamsPos();
     }
 
     public Team FindTeam(string abbr)
@@ -54,16 +54,54 @@ public class League
         {
             Console.WriteLine("There are duplicate team abbreviations in a league");
             return null;
-            
-        } else if (findResult.Count < 1)
+        }
+        else if (findResult.Count < 1)
         {
             return null;
         }
-        
+
         return findResult[0];
-        
-        
     }
-    
-    
+
+    public void CalculateTeamsPos()
+    {
+        var newTeams = Teams;
+
+        newTeams = newTeams.OrderByDescending(x => x.Points)
+            .ThenByDescending(x => x.GoalDifference)
+            .ThenByDescending(x => x.GoalsFor)
+            .ThenBy(x => x.GoalsAgainst)
+            .ThenBy(x => x.Name)
+            .ToList();
+
+        int position = 1;
+        Team t1 = newTeams[0];
+        foreach (var team in newTeams)
+        {
+            if (!t1.Abbr.Equals(team.Abbr)
+                && t1.Points.Equals(team.Points)
+                && t1.GoalDifference.Equals(team.GoalDifference)
+                && t1.GoalsFor.Equals(team.GoalsFor)
+                && t1.GoalsAgainst.Equals(team.GoalsAgainst))
+            {
+                team.Position = position - 1;
+            }
+            else
+            {
+                team.Position = position++;
+            }
+
+            t1 = team;
+        }
+
+        this.Teams = newTeams;
+    }
+
+    public void AddTeam(Team team)
+    {
+        this.Teams.Add(team);
+        // List<Team> tl = this.Teams;
+        // tl.Add(team);
+        // this.Teams = tl;
+    }
 }
