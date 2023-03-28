@@ -3,12 +3,17 @@
 public class League
 {
     private string name;
-    private List<Team> teams;
+    private List<Team> teams = new List<Team>();
 
     public League(string name, List<Team> teams)
     {
         this.name = name;
         this.teams = teams;
+    }
+    
+    public League(string name)
+    {
+        this.name = name;
     }
 
     public string Name
@@ -97,11 +102,10 @@ public class League
         this.Teams = newTeams;
     }
 
-    public void AddTeam(Team team)
+    public void AddTeam(string name, string abbr)
     {
-        this.Teams.Add(team);
-        // List<Team> tl = this.Teams;
-        // tl.Add(team);
-        // this.Teams = tl;
+
+        this.Teams.Add(new Team(name, abbr));
+        CalculateTeamsPos();
     }
 }
