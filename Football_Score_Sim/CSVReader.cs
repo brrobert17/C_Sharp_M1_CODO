@@ -10,7 +10,19 @@ public abstract class CSVReader
             {
                 var line = reader.ReadLine();
                 var values = line.Split(',');
-                func(values[0], values[1], Convert.ToByte(values[2]), Convert.ToByte(values[3]));
+                if (values.Length == 4)
+                {
+                    func(values[0], values[1], Convert.ToByte(values[2]), Convert.ToByte(values[3]));
+                } 
+                else if (values[2] == "X")
+                {
+                    Console.WriteLine("The match " + values[0] + " - " + values[1] + " was canceled");
+                }
+                else
+                {
+                    Console.WriteLine("There's incorrect formatting in [" + filePath + "] for a round file");
+                }
+
             }
         }
     }
