@@ -8,6 +8,7 @@ CSVReader.ReadFile(@"C:\Users\sfatt\OneDrive\Desktop\java class homework\semiste
 CSVReader.ReadDirectoryFiles(@"C:\Users\sfatt\OneDrive\Desktop\java class homework\semister4\c#\Firstcsharp\C_Sharp_M1_CODO\Football_Score_Sim\csv\s2022-2023", l1.AddMatch);
 
 TableDK.PrintTable(l1);
+TableDK.PrintTable(l1.Teams);
 
 
 
