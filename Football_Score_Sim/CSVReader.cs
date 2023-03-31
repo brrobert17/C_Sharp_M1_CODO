@@ -40,16 +40,18 @@ public abstract class CSVReader
         }
     }
     
-    public static void ReadDirectoryFiles(string dirPath, Action<string, string, int, int> func)
+    public static void ReadDirectoryRounds(string dirPath, Action<string, string, int, int> processFunc, Action displayFunc)
     {
         DirectoryInfo dir = new DirectoryInfo(dirPath);
 
+        int index = 0;
         foreach (FileInfo fInfo in dir.GetFiles())
         {
             
             string filePath = dirPath + "/" + fInfo.Name;
-            ReadFile(filePath, func);
-            
+            ReadFile(filePath, processFunc);
+            Console.WriteLine("\n Round no. " + (++index) + ": \n");
+            displayFunc();
         }
     }
 }

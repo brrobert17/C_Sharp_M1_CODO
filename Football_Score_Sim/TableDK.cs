@@ -38,9 +38,11 @@ public static class TableDK
             a => a[3], a => a[4], a => a[5],
             a => a[6], a => a[7], a => a[8],
             a => a[9], a => a[10], a => a[11]));
+        
+        
         //display table alphabeticaly by team names ask user
         
-        Console.WriteLine("Do you want to sort the table by team name? (y/n)");
+        /*Console.WriteLine("Do you want to sort the table by team name? (y/n)");
         string answer = Console.ReadLine();
         if (answer == "y")
         {
@@ -55,7 +57,7 @@ public static class TableDK
         else
         {
             Console.WriteLine("Thank you for using the program");
-        }
+        }*/
         
         
        
