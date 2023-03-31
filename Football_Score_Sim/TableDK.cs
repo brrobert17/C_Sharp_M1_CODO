@@ -16,7 +16,10 @@ public static class TableDK
         foreach (var team in l1Teams)
         {
             List<string> row = new List<string>();
+            
             row.Add(team.Position.ToString());
+            row.Add(team.Position.ToString());
+           
             row.Add(team.Name);
             row.Add(team.Abbr);
             row.Add(team.Matches.ToString());
@@ -41,16 +44,22 @@ public static class TableDK
 
 
         Console.WriteLine(tableLG.ToStringTable(
+            
             new[]
             {
-                "Position", "Name", "Abbr", "Matches", "Points", "Won", "Drawn", "Lost", "GF", "GA", "GD", "Streak"
+               "Qualifications", "Position", "Name", "Abbr", "Matches", "Points", "Won", "Drawn", "Lost", "GF", "GA", "GD", "Streak"
             },
-            row => row[0].Equals("1") ? ConsoleColor.Green : ConsoleColor.White,
-            row => row[1], row => row[2],
-            row => row[3], row => row[4], row => row[5],
-            row => row[6], row => row[7], row => row[8],
-            row => row[9], row => row[10], row => row[11]
-        ));
+            //first is champions leage second is UEFACUP, 2th last in 2ndLeague
+            a => a[0].Equals("1") ? "Champions League" : (a[0].Equals("2") ? "UEFA Cup" : (a[0].Equals("11") ? "2nd League" : (a[0].Equals("12") ? "2nd League" : ""))),
+
+
+           
+
+
+        a => a[1], a => a[2],
+            a => a[3], a => a[4], a => a[5],
+            a => a[6], a => a[7], a => a[8],
+            a => a[9], a => a[10], a => a[11],a=>a[12]));
 
         Console.ResetColor();
 
