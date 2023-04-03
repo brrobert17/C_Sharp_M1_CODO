@@ -16,7 +16,7 @@ public abstract class CSVReader
                 } 
                 else if (values[2] == "X")
                 {
-                    Console.WriteLine("The match " + values[0] + " - " + values[1] + " was canceled");
+                    Console.WriteLine("The match {0} - {1} was canceled", values[0], values[1]);
                 }
                 else
                 {

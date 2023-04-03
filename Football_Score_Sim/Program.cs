@@ -1,6 +1,17 @@
 ﻿using System.ComponentModel;
 using Football_Score_Sim;
 
+// var season = "";
+// while (season.Equals("") || season.Equals(null))
+// {
+//     Console.WriteLine("Which season would you like to run? (yyyy-yyyy)");
+//     season = Console.ReadLine();
+// }
+// if (season.Equals(null) || season.Equals(""))
+// {
+//     Console.WriteLine("Which season would you like to run? (yyyy-yyyy)");
+//     Console.WriteLine("please use the correct format!");
+// }
 
 League l1 = new League();
 

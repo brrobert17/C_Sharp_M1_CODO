@@ -2,7 +2,7 @@
 made by 'CODO' team
 
 ## This is a console application written in C#. The program utilizes a fileReader method to process .csv files to setup the league with the teams and process match results round by round.
-Inside the application's root directory there's a folder called 'scores'. This folder contains anouther folder called 's2022-2023'. If we wish to process further games you need to make a new folder starting with the letter 's' for season, followed by the years.
+Inside the application's root directory there's a folder called 'scores'. This folder contains another folder called 's2022-2023'. If we wish to process further games you need to make a new folder starting with the letter 's' for season, followed by the years.
 The setup and the teams are fixed, so in case we want to modify that we need to change the original files.
 
 ### Other features:
@@ -15,4 +15,4 @@ The setup and the teams are fixed, so in case we want to modify that we need to 
 - the table and the standings are displayed after each processed round
 
 ### Testing:
-We inculded a test folder with folder inside named after the special test cases. They contain individual files with one round of matches to test the positioning and the cancelled game.
+We included a test folder with folder inside named after the special test cases. They contain individual files with one round of matches to test the positioning and the cancelled game.
