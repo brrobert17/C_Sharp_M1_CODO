@@ -51,6 +51,7 @@ public class Team
     {
         get => position;
         set => position = value;
+        
     }
 
     public string Name
