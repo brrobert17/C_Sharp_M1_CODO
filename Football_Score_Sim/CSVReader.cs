@@ -40,6 +40,19 @@ public abstract class CSVReader
         }
     }
     
+    public static void ReadLeagueFile(string filePath, Action<string, int, int, int, int, int> func)
+    {
+        using(var reader = new StreamReader(filePath))
+        {
+            while (!reader.EndOfStream)
+            {
+                var line = reader.ReadLine();
+                var values = line.Split(',');
+                func(values[0], Convert.ToByte(values[1]), Convert.ToByte(values[2]), Convert.ToByte(values[3]), Convert.ToByte(values[4]), Convert.ToByte(values[5]));
+            }
+        }
+    }
+    
     public static void ReadDirectoryRounds(string dirPath, Action<string, string, int, int> processFunc, Action displayFunc)
     {
         DirectoryInfo dir = new DirectoryInfo(dirPath);

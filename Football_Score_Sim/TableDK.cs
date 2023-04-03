@@ -46,12 +46,13 @@ public static class TableDK
                 "Qualifications", "Position", "Name", "Abbr", "Matches", "Points", "Won", "Drawn", "Lost", "GF", "GA",
                 "GD", "Streak"
             },
-            //first is champions leage second is UEFACUP, 2th last in 2ndLeague
-            a => a[0].Equals("1")
+            
+            //In the future we could implement second league (NordicBetLeague) with promotions and so on
+            a => league.PosToChampion.Contains(Int16.Parse(a[0]))
                 ? "Champions League"
-                : (a[0].Equals("2")
+                : (league.PosToEurope.Contains(Int16.Parse(a[0]))
                     ? "UEFA Cup"
-                    : (a[0].Equals("11") ? "2nd League" : (a[0].Equals("12") ? "2nd League" : ""))),
+                    : (league.PosToLowerLeague.Contains(Int16.Parse(a[0])) ? "2nd League" : "")),
 
             a => a[1], a => a[2],
             a => a[3], a => a[4], a => a[5],
